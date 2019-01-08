@@ -62,7 +62,7 @@ listening.
 
 .. code-block:: console
 
-    /system logging action
+    /system logging action>
     set 3 remote=123.123.123.123 remote-port=12312
 
 Next command just prints out the settings of ``/system logging action`` .
