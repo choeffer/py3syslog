@@ -132,7 +132,7 @@ References
 .. _tmux: https://en.wikipedia.org/wiki/Tmux
 .. _Mikrotik: https://mikrotik.com/
 .. _`wAP LTE kit`: https://mikrotik.com/product/wap_lte_kit
-.. _Grafana: https://grafana.com/
 .. _CLI: https://wiki.mikrotik.com/wiki/Manual:First_time_startup#CLI
+.. _Grafana: https://grafana.com/
 .. _datasource: http://docs.grafana.org/features/datasources/mysql/
 .. _table: http://docs.grafana.org/features/panels/table_panel/
