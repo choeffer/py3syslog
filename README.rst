@@ -89,7 +89,7 @@ syslog server.
 
 .. code-block:: console
 
-    /system logging
+    /system logging>
     add action=remote prefix=example_prefix topics=info
     add action=remote prefix=example_prefix topics=error
     add action=remote prefix=example_prefix topics=warning
