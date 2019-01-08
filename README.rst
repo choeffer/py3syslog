@@ -98,6 +98,7 @@ syslog server.
 Grafana
 ^^^^^^^
 
+Grafana is used to display the syslog messages. 
 In Grafana_ the database has to be added as a datasource_ . Then a table_ 
 with following SQL query in the Metrics tab can be added to a dashboard. The 
 SQL query has to be adjusted to the used database/table/columns structure, see 
