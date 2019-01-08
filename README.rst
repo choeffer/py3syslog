@@ -45,7 +45,7 @@ execute it.
 
     python3 syslogserver.py
 
-Or use e.g. tmux_ for leave it running in the background.
+Or use e.g. tmux_ to execute it in the background.
 
 Example Mikrotik RouterOS
 -------------------------
