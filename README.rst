@@ -105,7 +105,7 @@ SQL query has to be adjusted to the used database/table/columns structure, see
 script ``syslogserver.py`` for more details how the database/table/columns are 
 created.
 
-.. code-block:: console
+.. code-block:: sql
 
     SELECT
     timestamp,
