@@ -103,16 +103,18 @@ In Grafana_ the database has to be added as a datasource_ . Then a table_
 with following SQL query in the Metrics tab can be added to a dashboard. The 
 SQL query has to be adjusted to the used database/table/columns structure, see 
 script ``syslogserver.py`` for more details how the database/table/columns are 
-created.
+created. The ``AND message LIKE '%example_prefix%'`` part of the SQL query is 
+used to display only a certain device based on the above used ``prefix=`` 
+option.
 
 .. code-block:: sql
 
     SELECT
-    timestamp,
+    inserted_utc,
     message
     FROM logging.logs
-    WHERE $__timeFilter(timestamp) AND message LIKE '%example_prefix%'
-    ORDER BY timestamp DESC
+    WHERE $__timeFilter(inserted_utc) AND message LIKE '%example_prefix%'
+    ORDER BY inserted_utc DESC
 
 Credits
 -------
