@@ -37,13 +37,13 @@ def create_table(db_name, table_name, cursor, debug = False):
 
     #a separate id column as primary key is used to allow same timestamp values
     #https://docs.python.org/3/reference/lexical_analysis.html#string-literal-concatenation
-    #be aware of https://mariadb.com/kb/en/library/reserved-words, therefore column is not 
+    #be aware of https://mariadb.com/kb/en/library/reserved-words, therefore column is not
     #named "timestamp"
     sql_statement = (
         'CREATE TABLE IF NOT EXISTS {}.{}('
         'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,'
         'inserted_utc DATETIME,'
-        'message VARCHAR(128))').format(db_name, table_name)
+        'message VARCHAR(256))').format(db_name, table_name)
 
     write_to_db(sql_statement, cursor, debug)
 
