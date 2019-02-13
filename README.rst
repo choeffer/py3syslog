@@ -48,7 +48,7 @@ execute it.
 Or use e.g. tmux_ to execute it in the background.
 
 Systemd service
----------------
+^^^^^^^^^^^^^^^
 
 An example .service file is also included to show how to run the syslog server
 as a systemd service at startup. For more informations, see `systemd.service`_ .
