@@ -47,6 +47,28 @@ execute it.
 
 Or use e.g. tmux_ to execute it in the background.
 
+Systemd service
+---------------
+
+An example .service file is also included to show how to run the syslog server
+as a systemd service at startup. For more informations, see `systemd.service`_ .
+In the example .service file a virtual Python 3 environment is used to execute
+the script. The local user name and the path to the virtual Python 3 environment
+needs to be adjusted before it can be used.
+
+To activate the systemd service execute following commands.
+
+.. code-block:: console
+
+    sudo cp syslogserver.service /etc/systemd/system/
+
+    sudo systemctl daemon-reload
+
+    sudo systemctl start syslogserver.service
+
+    sudo systemctl enable syslogserver.service
+
+
 Example Mikrotik RouterOS
 -------------------------
 
@@ -133,6 +155,7 @@ References
 .. _venv1: https://docs.python.org/3/tutorial/venv.html
 .. _venv2: https://docs.python.org/3/library/venv.html
 .. _tmux: https://en.wikipedia.org/wiki/Tmux
+.. _`systemd.service`: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
 .. _Mikrotik: https://mikrotik.com/
 .. _`wAP LTE kit`: https://mikrotik.com/product/wap_lte_kit
 .. _CLI: https://wiki.mikrotik.com/wiki/Manual:First_time_startup#CLI

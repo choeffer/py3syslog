@@ -1,0 +1,16 @@
+[Unit]
+Description=Syslog Server
+After=network.target
+
+[Service]
+ExecStart=/home/example_user/venv/bin/python3 -u syslogserver.py
+WorkingDirectory=/home/example_user
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=5
+User=example_user
+
+[Install]
+WantedBy=multi-user.target
+
