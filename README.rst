@@ -8,7 +8,7 @@ About
 -----
 
 The Python script will start a syslog server which inserts every recieved message 
-and write it into a MariaDB_ or MySQL_ database. The used timestamp is in UTC. 
+and write it into a MariaDB_ or MySQL_ database. 
 
 Every time the script is executed it will check if the database and table exist 
 and if not create them. Then the script is executed until it will be 
