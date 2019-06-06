@@ -56,7 +56,7 @@ def insert_data(db_name, table_name, cursor, data, debug=False):
         'INSERT INTO {}.{} SET '
         'inserted_utc = %s,'
         'message = %s').format(db_name, table_name)
-    variables = (datetime.utcnow(), data)
+    variables = (datetime.now(), data)
 
     write_to_db(sql_statement, cursor, variables=variables)
 
