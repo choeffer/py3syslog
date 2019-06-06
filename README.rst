@@ -53,10 +53,12 @@ Systemd service
 An example .service file is also included to show how to run the syslog server
 as a systemd service at startup. For more informations, see `systemd.service`_ .
 In the example .service file a virtual Python 3 environment is used to execute
-the script. The local user name and the path to the virtual Python 3 environment
-needs to be adjusted before it can be used.
+the script. Also the script will be automatically restarted if it crashes to
+ensure that the syslog server is always running. The local user name and the
+path to the virtual Python 3 environment needs to be adjusted before it can be
+used.
 
-To activate the systemd service execute following commands.
+To activate the systemd service execute the following commands.
 
 .. code-block:: console
 
