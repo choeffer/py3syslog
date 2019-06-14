@@ -16,7 +16,7 @@ manually closed. Every time a message is recieved on the defined port the
 data will be decoded as UTF-8, inserted in the database and printed out in 
 the terminal.
 
-Be aware the that the UDP packages are not encypted. It is taken care off avoiding 
+Be aware that the UDP packages are not encypted. It is taken care off avoiding 
 SQL injections because the server might be facing the internet.
 
 The script uses the python module socketserver_ and the external module
