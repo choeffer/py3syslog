@@ -8,8 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: print commit sha
+      run: echo ${{ github.GITHUB_REPOSITORY }}
     - name: docker 
-      run: docker build --file Dockerfile --tag ${{ github.GITHUB_REPOSITORY }}:${{ github.SHA }} .
+      run: docker build --file Dockerfile --tag temp/temp:${{ github.GITHUB_REF }} .
     - name: push the image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
