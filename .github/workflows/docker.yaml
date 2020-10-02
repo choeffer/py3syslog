@@ -1,5 +1,5 @@
 ---
-name: docker
+name: container
 on: [ push ]
 
 jobs:
@@ -9,11 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: docker 
-      run: docker build --file Dockerfile --tag ${{ github.REPOSITORY }}:${{ github.REF }} .
+      run: docker build --file Dockerfile --tag ${{ github.REPOSITORY }}:${{ github.SHA }} .
     - name: push the image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        tag: ${{ github.REF }}
+        tag: ${{ github.SHA }}
         image: ${{ github.REPOSITORY }}
         registry: ghcr.io
         username: ${{ github.ACTOR }} # todo: are packages per repo or per user?!
