@@ -10,6 +10,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: docker 
       run: docker build --file Dockerfile --tag ${{ github.REPOSITORY }}:${{ github.SHA }} .
+    - name: start image
+      run: docker run --rm  -it ${{ github.REPOSITORY }}:${{ github.SHA }}
     - name: push the image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
