@@ -8,17 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: debug
-      run: echo ${{ github.GITHUB_REF }}
-    - name: debug
-      run: echo ${{ github.GITHUB_REPOSITORY }}
     - name: docker 
-      run: docker build --file Dockerfile --tag temp/temp:latest .
+      run: docker build --file Dockerfile --tag ${{ github.REPOSITORY }}:${{ github.REF }} .
     - name: push the image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        tag: ${{ github.GITHUB_REF }}
-        image: ${{ github.GITHUB_REPOSITORY }}
+        tag: ${{ github.REF }}
+        image: ${{ github.REPOSITORY }}
         registry: ghcr.io
         username: ${{ github.ACTOR }} # todo: are packages per repo or per user?!
         password: ${{ secrets.PUSHTOKEN }} 
