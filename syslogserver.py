@@ -1,6 +1,7 @@
 import socketserver
 from datetime import datetime
 import time
+import sys
 
 import mysql.connector as mariadb
 
@@ -110,6 +111,7 @@ if __name__ == "__main__":
         mariadb_connection = mariadb.connect(user = db_user, password = db_password, host = db_host, port = db_port)
     except mariadb.Error as error:
         print('Error: {}'.format(error))
+        sys.exit()
 
     #every time a new cursor is created because the old one gets closed 
     #in the called write_to_db function
@@ -137,3 +139,5 @@ if __name__ == "__main__":
 
     #handle requests until explicit shutdown(), see python docs
     server.serve_forever()
+
+    sys.exit()
