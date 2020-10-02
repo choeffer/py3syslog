@@ -1,0 +1,20 @@
+---
+name: docker
+on: [ push ]
+
+jobs:
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: docker 
+      run: docker build --file Dockerfile --tag ${{ github.GITHUB_REPOSITORY }}:${{ github.SHA }} .
+    - name: push the image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        tag: ${{ github.GITHUB_REF }}
+        image: ${{ github.GITHUB_REPOSITORY }}
+        registry: ghcr.io
+        username: ${{ github.ACTOR }} # todo: are packages per repo or per user?!
+        password: ${{ secrets.PUSHTOKEN }} 
